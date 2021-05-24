@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f7f7f7;
+}
+
+.container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  pointer-events: none;
+}
+
+.container.show {
+  pointer-events: all;
+}
+
+.container .stripe-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.container .stripe {
+  height: 0%;
+  width: 25%;
+  background: #121212;
+  transition: height 250ms ease-in-out;
+  transition-delay: var(--i);
+}
+
+.container.show .stripe {
+  height: 100%;
+}
+
+.container .navbar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .navbar .nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.container .navbar .nav-item {
+  font-size: 2em;
+  margin: 0 2em;
+  font-family: "Poppins", sans-serif;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 250ms ease-in-out;
+  transition-delay: 0;
+}
+
+.container.show .navbar .nav-item {
+  opacity: 1;
+  transform: translate(0);
+  transition-delay: var(--i);
+}
+
+.container .navbar .nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #f7f7f7;
+  padding-bottom: 10px;
+}
+
+.container .navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0%;
+  background: #f7f7f7;
+  transition: width 250ms ease-in-out;
+}
+
+.container .navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  padding: 1em 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hamburger {
+  height: 3rem;
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 2px;
+  background: #121212;
+  transition: transform, background 250ms ease-in-out;
+}
+
+.hamburger.cross {
+  justify-content: center;
+  transform: rotate(360deg);
+}
+
+.hamburger.cross #bar-1 {
+  transform: rotate(45deg);
+  background: #f7f7f7;
+}
+
+.hamburger.cross #bar-2 {
+  transform: rotate(-45deg);
+  background: #f7f7f7;
+}

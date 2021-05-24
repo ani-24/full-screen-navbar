@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full screen navbar</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="stripe-bg">
+        <div class="stripe" id="stripe-1" style="--i: 750ms"></div>
+        <div class="stripe" id="stripe-2" style="--i: 500ms"></div>
+        <div class="stripe" id="stripe-3" style="--i: 250ms"></div>
+        <div class="stripe" id="stripe-4" style="--i: 0"></div>
+      </div>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-item" style="--i: 1000ms">
+            <a href="#" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item" style="--i: 1250ms">
+            <a href="#" class="nav-link">About us</a>
+          </li>
+          <li class="nav-item" style="--i: 1500ms">
+            <a href="#" class="nav-link">Our Team</a>
+          </li>
+          <li class="nav-item" style="--i: 1750ms">
+            <a href="#" class="nav-link">Contact us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <header>
+      <div class="hamburger">
+        <div class="bar" id="bar-1"></div>
+        <div class="bar" id="bar-2"></div>
+      </div>
+    </header>
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const container = document.querySelector(".container");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("cross");
+        container.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
